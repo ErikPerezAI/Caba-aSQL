@@ -1,0 +1,444 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.titulos {
+  font-family: "Lovers Quarrel", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  background-color: #fff5f0;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+/* HEADER */
+header {
+  background-color: brown;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* opcional: separa los elementos */
+  z-index: 10; /* Para que el header esté por encima de todo */
+}
+header h1 {
+  color: #fff8f0; /* Beige muy claro */
+  font-size: 50px;
+}
+header a {
+  color: #fff8f0; /* Beige muy claro */
+
+  background-color: brown;
+  border: none;
+  padding: 10px;
+}
+
+/* PORTADA */
+.sma {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Estilo general */
+.portada h2,
+.portada p,
+.portada button {
+  position: absolute;
+  z-index: 5;
+}
+
+/* Títulos y botones para pantallas grandes */
+.portada h2 {
+  top: 250px;
+  left: 60px;
+  font-size: 100px;
+  color: brown;
+}
+
+.portada p {
+  left: 60px;
+  top: 370px;
+  color: black;
+  font-size: 40px;
+  text-align: center;
+}
+
+.portada button:nth-of-type(1) {
+  background: linear-gradient(to bottom, brown, #8b0000);
+  left: 60px;
+  top: 460px;
+  padding: 12px 24px;
+  border: none;
+  color: white;
+  z-index: 5;
+}
+
+.portada button:nth-of-type(2) {
+  background: linear-gradient(to bottom, white, #e6e6e6);
+  left: 200px;
+  top: 460px;
+  padding: 12px 24px;
+  border: 1px solid black;
+  opacity: 0.5;
+  z-index: 5;
+}
+
+/* INFOO */
+.info {
+  position: relative;
+  min-height: 400px;
+  padding: 2rem 0;
+}
+.texto {
+  position: static;
+  text-align: left;
+  padding: 20px;
+}
+.info p {
+  font-size: 20px;
+}
+.listas {
+  padding-left: 20px;
+}
+.info h2 {
+  text-align: center;
+  color: darkslategray;
+}
+.imageContenedor {
+  position: absolute;
+  top: 100px;
+  right: 40px;
+  width: 350px;
+  height: 250px;
+}
+.info img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.info img:nth-of-type(1) {
+  animation: slideShow 15s infinite 0s;
+}
+
+.info img:nth-of-type(2) {
+  animation: slideShow 15s infinite 3s;
+}
+
+.info img:nth-of-type(3) {
+  animation: slideShow 15s infinite 6s;
+}
+
+.info img:nth-of-type(4) {
+  animation: slideShow 15s infinite 9s;
+}
+
+.info img:nth-of-type(5) {
+  animation: slideShow 15s infinite 12s;
+}
+@keyframes slideShow {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* UBICACION */
+.ubi h2 {
+  text-align: center;
+  color: darkslategray;
+}
+.ubi div {
+  position: absolute;
+  top: 320px;
+  padding-left: 100px;
+}
+.ubi {
+  padding: 40px;
+  position: relative;
+  min-height: 400px;
+}
+.ubi iframe {
+  position: absolute;
+  top: 70px;
+  width: 350px;
+  height: 250px;
+}
+.ubi dl {
+  border: medium solid black;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: white;
+  position: absolute;
+  right: 40px;
+  top: 70px;
+  font-size: 20px;
+}
+
+/* TARJETAS */
+.seccion {
+  text-align: center; /* centra el título */
+  padding: 20px;
+  color: darkslategray;
+}
+
+.tarjetas h2 {
+  text-align: center;
+}
+
+.tarjetas {
+  display: flex;
+  justify-content: center; /* centra horizontalmente */
+  padding: 20px;
+  gap: 120px;
+  flex-wrap: wrap;
+  margin: 0 auto; /* centra el contenedor */
+}
+
+.tarjeta {
+  position: relative;
+  width: 300px;
+  background-color: white;
+  padding-bottom: 50px;
+  border-radius: 8px;
+  border: medium solid brown;
+  transition: transform 0.25s ease, /* movimiento */ box-shadow 0.25s ease; /* sombra */
+  will-change: transform;
+}
+/* Tarjeta al hacer hover */
+.tarjeta:hover {
+  transform: translateY(-10px); /* “se levanta” 10 px */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); /* sombra más profunda */
+}
+.tarjeta li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.tarjeta ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  font-size: 10px;
+  padding: 10px;
+}
+.tarjeta img {
+  width: 100%;
+}
+
+.tarjeta button:nth-of-type(1) {
+  position: absolute;
+  padding: 4px 4px;
+  background-color: brown;
+  border-color: brown;
+  border-radius: 3px;
+  right: 9px;
+  bottom: 5px;
+  background: linear-gradient(to bottom, brown, #8b0000);
+}
+.tarjeta button:nth-of-type(2) {
+  position: absolute;
+  padding: 4px 4px;
+  background-color: white;
+  border-color: brown;
+  border-radius: 3px;
+  left: 9px;
+  bottom: 5px;
+}
+/* CONSULTAS */
+.consultas {
+  text-align: center; /* centra el título */
+  padding: 20px;
+  color: darkslategray;
+}
+.consulta {
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap; /* permite que baje a la siguiente línea */
+  gap: 1.2rem 2rem; /* espacio entre elementos */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.consulta button {
+  flex: 1 1 100%; /* ocupa toda la fila */
+  text-align: center; /* centra el texto */
+  padding: 10px 20px;
+  margin: 0 auto; /* esto centra el botón dentro de su fila */
+  max-width: 200px; /* opcional: limita el ancho */
+  border: none;
+  background-color: brown;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  background: linear-gradient(to bottom, brown, #8b0000);
+}
+/* FOOTER */
+.pie {
+  height: 150px;
+  position: relative;
+  background-color: brown;
+  padding: 20px;
+  background: linear-gradient(
+    to bottom,
+    brown,
+    #8b0000
+  ); /* Degradado vertical */
+}
+.sub {
+  color: #fff8f0; /* Beige muy claro */
+  font-size: 60px;
+  position: absolute;
+  top: 20px;
+  left: 340px;
+}
+.data {
+  color: #fff8f0; /* Beige muy claro */
+
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+/* Pantalla chica */
+@media (max-width: 768px) {
+  .info {
+    position: relative;
+    min-height: auto;
+  }
+
+  /* volvemos a absolute y la centramos */
+  .imageContenedor {
+    padding-top: 310px; /* hace espacio para el carrusel */
+    position: absolute; /* vuelve a salirse del flujo */
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 350px; /* tu ancho original como tope */
+    height: auto;
+    margin: 0 auto; /* centrada */
+    z-index: 10; /* siempre encima del mapa */
+  }
+
+  .info img {
+    position: absolute; /* se mantienen superpuestas */
+    width: 100%;
+    height: auto; /* Para que se adapte */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .info img:nth-of-type(1) {
+    animation: slideShow 15s infinite 0s;
+  }
+
+  .info img:nth-of-type(2) {
+    animation: slideShow 15s infinite 3s;
+  }
+
+  .info img:nth-of-type(3) {
+    animation: slideShow 15s infinite 6s;
+  }
+
+  .info img:nth-of-type(4) {
+    animation: slideShow 15s infinite 9s;
+  }
+
+  .info img:nth-of-type(5) {
+    animation: slideShow 15s infinite 12s;
+  }
+
+  .texto {
+    padding: 10px;
+    text-align: left;
+  }
+
+  .info p {
+    font-size: 16px;
+  }
+
+  .info h2 {
+    font-size: 22px;
+  }
+}
+@media (max-width: 768px) {
+  .ubi {
+    min-height: auto;
+    padding: 220px 20px 20px 20px;
+  }
+
+  .ubi div,
+  .ubi iframe,
+  .ubi dl {
+    position: relative;
+    top: auto;
+    right: auto;
+    padding-left: 0;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .ubi iframe {
+    height: 200px;
+  }
+
+  .ubi dl {
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .portada h2 {
+    top: 100px;
+    left: 20px;
+    font-size: 40px;
+  }
+
+  .portada p {
+    top: 160px;
+    left: 20px;
+    font-size: 18px;
+    text-align: left;
+    right: 20px;
+  }
+  .portada button:nth-of-type(1),
+  .portada button:nth-of-type(2) {
+    position: absolute;
+    left: 20px;
+    width: auto;
+    padding: 10px 20px;
+  }
+
+  .portada button:nth-of-type(1) {
+    top: 220px;
+  }
+
+  .portada button:nth-of-type(2) {
+    top: 270px;
+  }
+}
