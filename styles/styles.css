@@ -170,35 +170,74 @@ header a {
 /* UBICACION */
 .ubi h2 {
   text-align: center;
-  color: darkslategray;
-}
-.ubi div {
-  position: absolute;
-  top: 320px;
-  padding-left: 100px;
-}
-.ubi {
-  padding: 40px;
-  position: relative;
-  min-height: 400px;
-}
-.ubi iframe {
-  position: absolute;
-  top: 70px;
-  width: 350px;
-  height: 250px;
-}
-.ubi dl {
-  border: medium solid black;
-  padding: 20px;
-  border-radius: 8px;
-  background-color: white;
-  position: absolute;
-  right: 40px;
-  top: 70px;
-  font-size: 20px;
+  color: #2f4f4f;
+  margin-bottom: 30px;
+  font-size: 32px;
+  font-weight: 700;
 }
 
+.cont {
+  padding: 40px;
+  min-height: 400px;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 120px;
+}
+
+.ubi iframe {
+  width: 450px;
+  height: 350px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: 0;
+}
+
+.ubi dl {
+  width: 450px;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: 0;
+  right: 0;
+  margin: 0;
+  border: none;
+  font-size: 16px;
+}
+
+.ubi dt {
+  font-size: 18px;
+  font-weight: 600;
+  color: #8b0000;
+  margin-bottom: 5px;
+}
+
+.ubi dd {
+  margin-left: 0;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .ubi div {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .ubi iframe,
+  .ubi dl {
+    width: 100%;
+    max-width: 450px;
+  }
+}
 /* TARJETAS */
 .seccion {
   text-align: center; /* centra el título */
@@ -269,31 +308,101 @@ header a {
   bottom: 5px;
 }
 /* CONSULTAS */
+/* Estilo general del contenedor */
 .consultas {
-  text-align: center; /* centra el título */
-  padding: 20px;
-  color: darkslategray;
-}
-.consulta {
-  padding-top: 20px;
-  display: flex;
-  flex-wrap: wrap; /* permite que baje a la siguiente línea */
-  gap: 1.2rem 2rem; /* espacio entre elementos */
-  max-width: 1200px;
+  max-width: 600px;
   margin: 0 auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-.consulta button {
-  flex: 1 1 100%; /* ocupa toda la fila */
-  text-align: center; /* centra el texto */
-  padding: 10px 20px;
-  margin: 0 auto; /* esto centra el botón dentro de su fila */
-  max-width: 200px; /* opcional: limita el ancho */
-  border: none;
-  background-color: brown;
+
+/* Título del formulario */
+.consultas h2 {
+  text-align: center;
+  color: #2f4f4f;
+  margin-bottom: 30px;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* Estilos del formulario */
+.consultas .consulta {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Etiquetas */
+.consultas .consulta label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Campos de entrada */
+.consultas .consulta input,
+.consultas .consulta textarea,
+.consultas .consulta select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+}
+
+/* Estilo específico para campos de fecha */
+.consultas .consulta input[type="date"] {
+  padding: 13px 14px;
+}
+
+/* Estilo para el textarea */
+.consultas .consulta textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Efectos al enfocar campos */
+.consultas .consulta input:focus,
+.consultas .consulta textarea:focus {
+  border-color: #8b0000;
+  box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.1);
+  outline: none;
+  background-color: #fff;
+}
+
+/* Botón de enviar */
+.consultas .consulta button {
+  padding: 15px;
+  background: linear-gradient(to bottom, #8b0000, #6b0000);
   color: white;
-  border-radius: 5px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-  background: linear-gradient(to bottom, brown, #8b0000);
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Efectos hover y active para el botón */
+.consultas .consulta button:hover {
+  background: linear-gradient(to bottom, #6b0000, #5b0000);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.consultas .consulta button:active {
+  transform: translateY(0);
 }
 /* FOOTER */
 .pie {
